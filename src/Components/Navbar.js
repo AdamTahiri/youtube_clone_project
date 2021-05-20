@@ -5,7 +5,7 @@ import Homepage from "./Homepage";
 const Navbar = () => {
   return (
     <nav>
-      <NavLink exact to="/"></NavLink>
+     
       <NavLink to="YouTube">YouTube</NavLink>
       <NavLink to="About">About </NavLink>
       
