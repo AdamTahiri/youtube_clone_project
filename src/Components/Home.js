@@ -6,10 +6,11 @@ import './Home.css'
 const Home = () => {
     const [input, setInput] = useState("");
     const [videosArray, setVideosArray] = useState([]);
+    const [showVideos, setShowVideos] = useState(false);
 
     const fetchYoutubeVideos = async () => {
         try {
-            const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&key=${process.env.REACT_APP_API_KEY }&q=${input}`);
+            const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/search/?part=snippet&maxResults=12&key=${process.env.REACT_APP_API_KEY }&q=${input}`);
             setVideosArray(res.data.items)
             debugger
         } catch (error) {
@@ -21,10 +22,16 @@ const Home = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         fetchYoutubeVideos();
+        setShowVideos(true)
+        setInput("")
     }
 
     const handleChange = (e) => {
         setInput(e.target.value);
+    }
+
+    const toggleVideos = () => {
+        setShowVideos(!showVideos);
     }
 
     return (
@@ -33,11 +40,13 @@ const Home = () => {
             <input type="text" onChange={handleChange} value={input} placeholder="search"/>
             <button>Search</button>
             </form>
+            {showVideos ? 
             <ul>
             {videosArray.map((video) => {
-                return <li key={video.id.videoId}><img src={video.snippet.thumbnails.default.url}/>{video.snippet.thumbnails.default.title} {video.snippet.description}</li>
+                return <li key={video.id.videoId}><img src={video.snippet.thumbnails.default.url}/><b>{video.snippet.title}</b> <br/>{video.snippet.description}</li>
             })}
-            </ul>
+            </ul> : "No Videos" 
+            }
         </section>
     )
 }
