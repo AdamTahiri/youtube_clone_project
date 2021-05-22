@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function hea() {
+export default function About() {
     return (
         <div>
             <h1>Team 1</h1>
