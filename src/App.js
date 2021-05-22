@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Switch>
-        <Route exact path={"/youtube"} component={Homepage} />
-        <Route exact path={"/about"} component={About} />
+        <Route path={"/youtube"} component={Homepage} />
+        <Route path={"/about"} component={About} />
       </Switch>
     </div>
   );
