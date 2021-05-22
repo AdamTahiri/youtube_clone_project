@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Homepage from "./Homepage";
 
 const Navbar = () => {
   return (
@@ -13,4 +12,4 @@ const Navbar = () => {
   );
 };
 
-export default Homepage
+export default Navbar
