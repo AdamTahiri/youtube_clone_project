@@ -43,7 +43,7 @@ const Home = () => {
             {showVideos ? 
             <ul>
             {videosArray.map((video) => {
-                return <li key={video.id.videoId}><img src={video.snippet.thumbnails.default.url}/><b>{video.snippet.title}</b> <br/>{video.snippet.description}</li>
+                return <li key={video.id.videoId}> <img src={video.snippet.thumbnails.default.url}/><b>{video.snippet.title}</b> <br/>{video.snippet.description}</li>
             })}
             </ul> : "No Videos" 
             }
