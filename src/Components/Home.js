@@ -44,20 +44,22 @@ const Home = () => {
           type="text"
           onChange={handleChange}
           value={input}
-          placeholder="search"
+          placeholder="Search"
         />
-        <button>Search</button>
+        <button className="button">Search</button>
       </form>
       {showVideos ? (
-        <ul>
+        <ul className="video_ul">
           {videosArray.map((video) => {
             return (
               <li key={video.id.videoId}>
                 <Link to={`/video/${video.id.videoId}`}>
                 {" "}
                 <img src={video.snippet.thumbnails.default.url} />
+                <div className="title_description">
                 <b>{video.snippet.title}</b> <br />
                 {video.snippet.description}
+                </div>
                 </Link>
               </li>
             );

@@ -1,1 +1,33 @@
 
+input[type=text] {
+    width: 200px;
+    height: 20px;
+    background-color: rgb(24, 22, 22);
+    color: white;
+}
+
+.button {
+    height: 26px;
+    cursor: pointer;
+}
+
+form {
+    margin-top: 30px
+}
+
+.video_ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.video_ul {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
