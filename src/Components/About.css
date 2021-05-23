@@ -1,0 +1,24 @@
+
+.profiles {
+    display: grid;
+    grid-template-columns: 35% 40%;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: rgb(24,24,24);
+    margin-top: 30px;
+}
+
+.profile_description {
+    color: white;
+    padding-top: 40px
+}
+
+p {
+    padding-top: 20px;
+    color: grey
+}
+
+.profiles img {
+    width: 70%;
+    margin-left: 100px;
+    padding-top: 30px;
+}

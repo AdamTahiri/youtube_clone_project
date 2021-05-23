@@ -1,16 +1,19 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import YouTube from 'react-youtube';
+import "./Video.css"
 
 const Video = () => {
   const { id } = useParams();
   return (
-    <div>
-      <iframe
-        width="420"
-        height="315"
+    <div className="video_container">
+      {/* <iframe
+        width="600"
+        height="400"
         src={`https://www.youtube.com/embed/${id}`}
-      ></iframe>
-      <Link to="/youtube">Go Back</Link>
+      ></iframe> */}
+      <YouTube videoId={id} />
+      <Link className="go_back_button" to="/youtube">Go Back</Link>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar className="nav_bar"/>
       <Switch>
         <Route path={"/youtube"} component={Home} />
         <Route path={"/about"} component={About} />
