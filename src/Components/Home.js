@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import VideoList from "./VideoList";
 import axios from "axios";
+import SearchIcon from "@material-ui/icons/Search";
 import "./Home.css";
 
 const Home = () => {
@@ -44,28 +46,13 @@ const Home = () => {
           type="text"
           onChange={handleChange}
           value={input}
-          placeholder="search"
+          placeholder="Search"
         />
-        <button>Search</button>
+        <button className="button">
+          <SearchIcon />
+        </button>
       </form>
-      {showVideos ? (
-        <ul>
-          {videosArray.map((video) => {
-            return (
-              <li key={video.id.videoId}>
-                <Link to={`/video/${video.id.videoId}`}>
-                {" "}
-                <img src={video.snippet.thumbnails.default.url} />
-                <b>{video.snippet.title}</b> <br />
-                {video.snippet.description}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      ) : (
-        "No Videos"
-      )}
+      <VideoList videosArray={videosArray} />
     </section>
   );
 };
