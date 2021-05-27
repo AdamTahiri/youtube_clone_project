@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar"
 import Home from './components/Home';
 import Video from './components/Video';
 import VideoList from './components/VideoList';
-
 import "./App.css";
 
 const App = () => {
