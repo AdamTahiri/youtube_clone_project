@@ -28,12 +28,11 @@ input {
 
 form {
     position: fixed;
+    left: 280px;
     display: flex;
-    justify-content: center;
-    left: 20vw;
-    top: 20px;
+    width: 50vw;
+    top: 17px;
     z-index: 2
-
 }
 
 .video_ul {
@@ -83,4 +82,15 @@ a {
     display:block; 
     width:100%;
     margin:-10% 0;
+}
+
+@media screen and (max-width: 720px) {
+    form {
+        width: 40vw;
+    }
+}
+@media screen and (max-width: 620px) {
+    form {
+        opacity: 0;
+    }
 }
