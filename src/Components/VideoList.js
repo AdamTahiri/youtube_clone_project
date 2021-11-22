@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const VideoList = (props) => {
-  debugger;
   return (
     <div>
       <ul className="video_ul">
@@ -13,7 +12,7 @@ const VideoList = (props) => {
                 {" "}
                 <div className="thumbnail_container">
                   <figure className="video_img">
-                    <img src={video.snippet.thumbnails.high.url} />
+                    <img src={video.snippet.thumbnails.high.url} alt="videoThumbnail"/>
                   </figure>
                   <div className="title_description">
                     <div className="title">
